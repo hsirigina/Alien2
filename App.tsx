@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -13,8 +6,9 @@ import {RoadmapScreen} from './src/screens/RoadmapScreen';
 import {DocumentsScreen} from './src/screens/DocumentsScreen';
 import {ProfileScreen} from './src/screens/ProfileScreen';
 import {StyleSheet, Text} from 'react-native';
+import {RootTabParamList} from './src/types/navigation';
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<RootTabParamList>();
 
 function App(): React.JSX.Element {
   return (
@@ -31,7 +25,7 @@ function App(): React.JSX.Element {
             name="Roadmap"
             component={RoadmapScreen}
             options={{
-              tabBarIcon: ({color}) => (
+              tabBarIcon: ({color}: {color: string}) => (
                 <Text style={[styles.tabIcon, {color}]}>📋</Text>
               ),
             }}
@@ -40,7 +34,7 @@ function App(): React.JSX.Element {
             name="Documents"
             component={DocumentsScreen}
             options={{
-              tabBarIcon: ({color}) => (
+              tabBarIcon: ({color}: {color: string}) => (
                 <Text style={[styles.tabIcon, {color}]}>📄</Text>
               ),
             }}
@@ -49,7 +43,7 @@ function App(): React.JSX.Element {
             name="Profile"
             component={ProfileScreen}
             options={{
-              tabBarIcon: ({color}) => (
+              tabBarIcon: ({color}: {color: string}) => (
                 <Text style={[styles.tabIcon, {color}]}>👤</Text>
               ),
             }}
@@ -74,4 +68,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default App; 

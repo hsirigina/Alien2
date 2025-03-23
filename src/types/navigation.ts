@@ -14,4 +14,10 @@ export type ProfileSetupStackParamList = {
   ImmigrationStatus: undefined;
   Documents: undefined;
   Preferences: undefined;
+};
+
+export type RootTabParamList = {
+  Roadmap: undefined;
+  Documents: undefined;
+  Profile: undefined;
 }; 
